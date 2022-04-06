@@ -55,8 +55,8 @@ sudo rm -r $PREFIX/conf/sites-enabled/default.conf
 
 sudo ln -s $PREFIX/conf/sites-available/default.conf $PREFIX/conf/sites-enabled/
 
-sudo chown -R root:$USER_RC $PREFIX
-sudo chown -R root:$USER_RC /var/www
+sudo chown -R $USER_RC $PREFIX
+sudo chown -R $USER_RC /var/www
 
 sudo chmod -R 777 $PREFIX
 sudo chmod -R 777 $PAR_PATH/nginx.service
