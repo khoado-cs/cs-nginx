@@ -1,0 +1,17 @@
+[Unit]
+Description=nginx rapidcode - high performance web server
+Documentation=http://nginx.org/en/docs/
+After=syslog.target network-online.target remote-fs.target nss-lookup.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+PIDFile=/home/khoado/Downloads/nginx-1.20.2/nginx/logs/nginx.pid
+ExecStartPre=/home/khoado/Downloads/nginx-1.20.2/nginx/sbin/nginx -t
+ExecStart=/home/khoado/Downloads/nginx-1.20.2/nginx/sbin/nginx -c /home/khoado/Downloads/nginx-1.20.2/nginx/conf/nginx.conf
+ExecReload=/home/khoado/Downloads/nginx-1.20.2/nginx/sbin/nginx -s reload
+ExecStop=/home/khoado/Downloads/nginx-1.20.2/nginx/sbin/nginx -s QUIT 
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
