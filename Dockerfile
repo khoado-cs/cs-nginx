@@ -44,8 +44,6 @@ WORKDIR ${PREFIX}
 
 RUN ln -s ${PREFIX}/conf/sites-available/default.conf ${PREFIX}/conf/sites-enabled/
 
-VOLUME ${PREFIX}/conf/sites-enabled/
-
 CMD ["nginx","-g" , "daemon off;"]
 
 EXPOSE 80/tcp 443/tcp 1935/tcp
